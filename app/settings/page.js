@@ -12,7 +12,7 @@ export default function SettingsPage() {
         <h1 className="text-3xl font-bold text-gray-900 mb-8">Settings</h1>
         <p className="text-gray-600 mb-8 max-w-2xl">
           Customize your experience by selecting your favorite genres and adjusting your reading preferences. 
-          This helps us recommend books you'll actually enjoy.
+          This helps us recommend books you&apos;ll actually enjoy.
         </p>
         <SettingsClient />
       </main>
