@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { searchBooks, formatBookData, getBooksByCategory } from '../lib/googleBooks';
 import SplitText from '../components/SplitText';
-import StarBorder from '../components/StarBorder';
+import GlowButton from '../components/GlowButton';
 import ProfileCard from '../components/ProfileCard';
 // Shuffle now used in global Navbar
 
@@ -293,19 +293,14 @@ export default function Home() {
               { name: 'Business', query: 'subject:business' },
               { name: 'Health', query: 'subject:health' },
             ].map((category) => (
-              <StarBorder
-                as="button"
+              <GlowButton
+                as={Link}
                 key={category.name}
-                onClick={() => {
-                  setSearchQuery(category.query);
-                  handleSearch({ preventDefault: () => {} });
-                }}
+                href={`/sessions?q=${encodeURIComponent(category.query)}&page=0`}
                 className="w-full cursor-target"
-                color="cyan"
-                speed="5s"
               >
-                <span className="font-semibold">{category.name}</span>
-              </StarBorder>
+                <span>{category.name}</span>
+              </GlowButton>
             ))}
           </div>
         </section>
