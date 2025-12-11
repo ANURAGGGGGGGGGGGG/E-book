@@ -5,7 +5,6 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import { getBookById, formatBookData } from '../../../lib/googleBooks';
-import StarBorder from '../../../components/StarBorder';
 import GlareHover from '../../../components/GlareHover';
 
 export default function BookDetail() {
