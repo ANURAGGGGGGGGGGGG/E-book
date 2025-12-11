@@ -45,7 +45,7 @@ export default function ProfileCard({
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{ transform, transition: "transform 150ms ease", transformStyle: "preserve-3d" }}
-      className={`bg-white rounded-xl shadow-md hover:shadow-lg border border-gray-200 p-6 relative ${className}`}
+      className={`bg-white rounded-xl shadow-md hover:shadow-lg border border-gray-200 p-4 sm:p-6 relative ${className}`}
     >
       {(coverUrl || avatarUrl) && (
         <div className="mb-4">

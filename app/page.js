@@ -162,12 +162,12 @@ export default function Home() {
       {/* Header moved to global Navbar in layout */}
 
       {/* Search Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-16">
+      <section className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-12 sm:py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <SplitText
             text="Find Your Next Great Read"
             tag="h2"
-            className="text-4xl font-bold mb-4"
+            className="text-3xl sm:text-4xl font-bold mb-4"
             delay={100}
             duration={0.6}
             ease="power3.out"
@@ -183,7 +183,7 @@ export default function Home() {
           <SplitText
             text="Search through millions of books, authors, and topics"
             tag="p"
-            className="text-xl mb-8 opacity-90"
+            className="text-lg sm:text-xl mb-8 opacity-90"
             delay={30}
             duration={0.5}
             ease="power2.out"
@@ -196,23 +196,23 @@ export default function Home() {
           />
           
           <form onSubmit={handleSearch} className="max-w-2xl mx-auto">
-            <div className="flex items-center justify-center gap-4">
-              <div className="cursor-target rounded-[20px] border border-white/20 bg-white/10">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <div className="relative w-full sm:w-auto">
                 <input
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   name="q"
-                  placeholder="Search for books, authors, ISBN, or topics..."
-                  className="bg-transparent text-white placeholder-white/70 px-4 py-3 focus:outline-none w-64 sm:w-80"
+                  placeholder="Search books, authors..."
+                  className="bg-white/20 text-white placeholder-white/70 px-6 py-3 rounded-full focus:outline-none focus:bg-white/30 transition-colors w-full sm:w-80 backdrop-blur-sm"
                 />
               </div>
               <button
                 type="submit"
                 disabled={loading}
-                className="cursor-target rounded-[20px] bg-black/70 hover:bg-black text-white border border-gray-800 py-[16px] px-[26px]"
+                className="cursor-target w-full sm:w-auto rounded-full bg-black/70 hover:bg-black text-white border border-gray-800 py-3 px-8 transition-all disabled:opacity-50"
               >
-                {loading ? 'Searching...' : 'Search'}
+                {loading ? '...' : 'Search'}
               </button>
             </div>
           </form>

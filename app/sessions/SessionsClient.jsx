@@ -85,22 +85,25 @@ export default function SessionsClient({ query, currentPage, pageSize }) {
           </div>
 
           {/* Pagination */}
-          <div className="flex items-center justify-center gap-4 mt-10">
-            <button
-              className="cursor-target rounded-[20px] bg-black/70 hover:bg-black text-white border border-gray-800 py-[16px] px-[26px] disabled:opacity-50"
-              onClick={() => hasPrev && goToPage(currentPage - 1)}
-              disabled={!hasPrev}
-            >
-              ◀ Previous
-            </button>
-            <span className="text-gray-700">Page {currentPage + 1}</span>
-            <button
-              className="cursor-target rounded-[20px] bg-black/70 hover:bg-black text-white border border-gray-800 py-[16px] px-[26px] disabled:opacity-50"
-              onClick={() => hasNext && goToPage(currentPage + 1)}
-              disabled={!hasNext}
-            >
-              Next ▶
-            </button>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10 pb-20">
+            <div className="flex items-center gap-4">
+              <button
+                className="cursor-target rounded-[20px] bg-black/70 hover:bg-black text-white border border-gray-800 py-3 px-6 sm:py-[16px] sm:px-[26px] disabled:opacity-50 text-sm sm:text-base"
+                onClick={() => hasPrev && goToPage(currentPage - 1)}
+                disabled={!hasPrev}
+              >
+                ◀ Previous
+              </button>
+              <span className="text-gray-700 sm:hidden">Page {currentPage + 1}</span>
+              <button
+                className="cursor-target rounded-[20px] bg-black/70 hover:bg-black text-white border border-gray-800 py-3 px-6 sm:py-[16px] sm:px-[26px] disabled:opacity-50 text-sm sm:text-base"
+                onClick={() => hasNext && goToPage(currentPage + 1)}
+                disabled={!hasNext}
+              >
+                Next ▶
+              </button>
+            </div>
+            <span className="text-gray-700 hidden sm:inline">Page {currentPage + 1}</span>
           </div>
         </>
       )}

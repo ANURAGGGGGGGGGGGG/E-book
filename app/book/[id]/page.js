@@ -68,16 +68,16 @@ export default function BookDetail() {
       {/* Header provided by global Navbar in layout */}
 
       {/* Book Details */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-12">
         <div className="bg-white rounded-xl border border-gray-200 shadow-lg overflow-hidden">
           <div className="md:flex">
             {/* Book Cover */}
             <div className="md:w-1/3 lg:w-1/4">
-              <div className="p-8 flex justify-center">
+              <div className="p-4 sm:p-8 flex justify-center">
                 <img
                   src={book.thumbnail}
                   alt={book.title}
-                  className="w-full max-w-sm h-auto rounded-lg shadow-xl hover:shadow-2xl transition-shadow"
+                  className="w-48 sm:w-full max-w-sm h-auto rounded-lg shadow-xl hover:shadow-2xl transition-shadow"
                   onError={(e) => {
                     e.target.src = 'https://via.placeholder.com/300x400/f3f4f6/9ca3af?text=No+Cover+Available';
                   }}
@@ -86,11 +86,11 @@ export default function BookDetail() {
             </div>
 
             {/* Book Information */}
-            <div className="md:w-2/3 lg:w-3/4 p-8">
+            <div className="md:w-2/3 lg:w-3/4 p-4 sm:p-8">
               <div className="mb-6">
-                <h1 className="text-3xl font-bold text-gray-900 mb-2">{book.title}</h1>
+                <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">{book.title}</h1>
                 {book.subtitle && (
-                  <h2 className="text-xl text-gray-600 mb-4">{book.subtitle}</h2>
+                  <h2 className="text-lg sm:text-xl text-gray-600 mb-4">{book.subtitle}</h2>
                 )}
                 <p className="text-lg text-gray-700 mb-2">
                   by <span className="font-semibold">{book.authors.join(', ')}</span>
