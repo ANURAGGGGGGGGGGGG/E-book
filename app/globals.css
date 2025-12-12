@@ -424,8 +424,16 @@
   font-family: Poppins, "sans-serif";
   font-size: 1rem;
   font-weight: 500;
+  text-align: center;
   padding: 0.8rem 3rem;
   position: relative;
+}
+
+@media (max-width: 360px) {
+  .btn-101 {
+    padding: 0.6rem 1.25rem;
+    font-size: 0.95rem;
+  }
 }
 
 .btn-101:hover {
